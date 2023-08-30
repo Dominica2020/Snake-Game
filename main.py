@@ -1,0 +1,38 @@
+from turtle import Screen
+from snake import Snake
+import time
+
+# 1 TODO: Create a snake body
+# 2 TODO: Move the snake
+# 3 TODO: Create snake food
+# 4 TODO: Detect collision with food
+# 5 TODO: Create a scoreboard
+# 6 TODO: Detect Collision with wall
+# 7 TODO: Detect Collision with tail
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("Snake Game")
+screen.tracer(0)
+
+snake = Snake()
+
+screen.listen()
+screen.onkey(fun=snake.up, key="Up")
+screen.onkey(fun=snake.down, key="Down")
+screen.onkey(fun=snake.left, key="Left")
+screen.onkey(fun=snake.right, key="Right")
+
+game_on = True
+while game_on:
+    screen.update()
+    time.sleep(0.1)
+
+    snake.move()
+
+
+screen.exitonclick()
+
+
+
